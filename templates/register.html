@@ -1,0 +1,29 @@
+{% extends "layout1.html" %}
+{% block title %} Welcome to Online Bookshop {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-12 p-5">
+            <h1 class="text-uppercase">register</h1>
+            <form class="p-5 text-uppercase" method="POST" action="{{ url_for('signup') }}">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email address" name="regmail" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Confirm Email address</label>
+                    <input type="email" class="form-control" id="confirmInputEmail" aria-describedby="emailHelp" placeholder="Confirm email address" name="checkmail" onblur="confemail()" autocomplete="off" required>
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="InputPassword" placeholder="Password" name="regpass" required>
+                </div>
+                <button type="submit" class="btn btn-primary text-uppercase" id="sub-button">submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}

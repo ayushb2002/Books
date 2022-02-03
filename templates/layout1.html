@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>  
+
+    <nav class="navbar sticky-top navbar-expand-md bg-success navbar-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">ReviewBooks.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="collapsibleNavbar">
+          <ul class="navbar-nav text-uppercase">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('appi') }}">API</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+            </li>    
+          </ul>
+        </div>  
+      </nav>
+
+    {% block body %}
+
+    {% endblock %}
+    <!-- Footer area -->
+<section class="footer p-5 bg bg-dark mt-5">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-6 col-sm-12" style="display: flex;justify-content: center;">
+            <div class="row">
+              <div class="col-12"><h2 class="text-uppercase text-white">social platforms</h2></div>
+            <div class="col-12">
+              <hr style="color: white; background-color: white;">
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-instagram"></i> Instagram</a><br>
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-facebook"></i> Facebook</a><br>
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-twitter"></i> Twitter</a>
+            
+            </div>
+            </div>          
+          </div>
+          <div class="col-lg-6 col-sm-12" style="display: flex;justify-content: center;">
+            <span class="linktolr">
+              <a href="{{ url_for('login') }}" class="btn btn-secondary btn-lg active m-2"><i class="fa fa-sign-in"></i> LOGIN</a>
+              <a href="{{ url_for('register') }}" class="btn btn-secondary btn-lg active m-2"><i class="fa fa-user-plus"></i>REGISTER</a>
+            </span>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Footer area ends-->
+</body>
+</html>

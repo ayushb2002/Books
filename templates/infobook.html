@@ -1,0 +1,60 @@
+{% extends "layout2.html" %}
+{% block title %} Welcome User {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-5">
+          
+          {% if message %}
+          <div class="alert alert-danger m-5">{{message}}</div>
+          {% else %}
+          <div class="alert alert-success m-5">Welcome to Book Page!</div>
+          {% endif %}
+            
+        </div>
+        <div class="col-12">
+            <div class="m-5">
+            <h2 class="text-uppercase">Data on the requested book: </h2><br>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ISBN</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Released</th>
+                    <th scope="col">Average Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{data['books'][0]['isbn']}}</th>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.year}}</td>
+                    <td>{{data['books'][0]['average_rating']}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="m-5">
+                <h2 class="text-uppercase">Reviews by users: </h2>
+                
+                {% if reviews %}
+                <ul class="m-5">
+                  {% for review in reviews %}
+                         <li> <p> User Review: {{ review.review }} <br> User Rating: {{ review.rating }} <br> </p> <p style="color:blue;">  <span class="mr-5"></span> --{{review.email}}</p> </li>
+                  {% endfor %}
+                  {% else %}
+                  <div class="alert alert-warning m-5">No reviews by users!</div>
+                {% endif %}
+                  
+                
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+*{
+    margin: 0em;
+    padding: 0em;
+}
+
+nav .navbar-nav li a{
+    font-size: 1em !important;
+    color: white !important;
+    }
+
+.navbar-brand{
+        font-size: 1.5em !important;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+
+.container-fluid{
+    margin: 0em;
+    padding: 0em;
+    overflow: hidden;
+}
+#hero-index
+{
+    @media only screen and(min-width:480px) {
+        height: 90vh;
+        background: url(hero-img.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.7;
+    }
+    
+    @media only screen and(min-width:960px) {
+        height: 90vh;
+        background: url(hero-img.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0.7;
+    }
+}
+#text-over:hover{
+    span{
+    text-decoration: underline;
+    }
+}
+#text-over{
+    position: absolute;
+    font-weight: bolder;
+    text-shadow: 3px 3px black;
+    @media only screen and(min-width:480px) {
+        padding: 3%;
+        top: 5%;
+        .hero-index-text{
+            font-size: 1.8em;
+        }
+        .aname{
+            font-size: 1em;
+        }
+    }
+    @media only screen and(min-width:960px) {
+        padding: 5% 10%;
+        top: 10%;
+        .hero-index-text{
+            font-size: 3em;
+        }
+        .aname{
+            font-size: 1.8em;
+        }
+    }
+    
+    
+    
+}
+#index-info{
+    margin-top: 5%;
+}
+.text-edit
+{
+    font-size: 1.5em;
+}
+.btn-st
+{
+    @media only screen and(min-width:480px) {
+    width: 70%;
+    height: 8vh;
+    font-weight: bolder;
+    font-size: 1em;
+    }
+    @media only screen and(min-width:960px) {
+    width: 40%;
+    height: 10vh;
+    font-weight: bolder;
+    font-size: 1.5em;
+    }
+    
+}
+
+.text-format{
+    font-size: 1.5em;
+}

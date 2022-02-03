@@ -1,0 +1,51 @@
+{% extends "layout2.html" %}
+{% block title %} Search Results {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center mt-5">
+            <h1 class="text-uppercase mb-5">Search based on {{filter_by}}:</h1>
+            
+            {% if data %}
+            <table class="table table-light table-striped p-5">
+              <thead>
+                <tr>
+                  <th>ISBN</th>
+                  <th>TITLE</th>
+                  <th>AUTHOR</th>
+                  <th>YEAR OF PUBLISH</th>
+                  <th>ABOUT BOOK</th>
+                  <th>REVIEW THIS BOOK</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  {% for i, t, a, y in data %}
+                 
+                <tr>
+                  <td>{{i}}</td>
+                  <td>{{t}}</td>
+                  <td>{{a}}</td>
+                  <td>{{y}}</td>
+                  <td> <a href="{{ url_for('bookpg', code=i) }}"><button class="recieve-code2 btn btn-success" data-code="{{i}}">View Book</button></a></td>
+                  <td> <a href="{{ url_for('revbook', code=i) }}"><button class="recieve-code btn btn-success" data-code="{{i}}">Review this</button></a></td>
+                </tr>
+
+              
+                {% endfor %}  
+              </tbody>
+            </table>
+                {% else %}
+
+                <div class="alert alert-warning pt-5 pb-5 mb-5">
+                  No Books Found!
+                </div>
+
+            {% endif %}  
+                
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

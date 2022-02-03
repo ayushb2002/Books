@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging out</title>
+    <script>
+       function bodyclose()
+       {
+            window.open("{{ url_for('index') }}", '_blank');
+            window.close(); 
+        }        
+    </script>
+</head>
+<body onload="bodyclose()">
+    <h1>Wait a second...</h1>
+</body>
+</html>

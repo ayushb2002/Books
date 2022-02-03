@@ -1,0 +1,23 @@
+{% extends "layout1.html" %}
+{% block title %} Welcome to Online Bookshop {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-12 p-5">
+            <h1 class="text-uppercase">login</h1>
+            <form class="p-5 text-uppercase" method="POST" action="{{ url_for('loggedin') }}">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email address" name="logmail" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="Password1" placeholder="Password" name="logpass" required>
+                </div>
+                <button type="submit" class="btn btn-primary text-uppercase">submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

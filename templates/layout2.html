@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>  
+
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+        <a class="navbar-brand text-uppercase" href="{{url_for('success')}}">reviewbooks.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav text-uppercase">
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="{{ url_for('searchbook') }}">Search book</a>
+            </li>
+            <li class="nav-item ml-5">
+              <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+            </li>    
+            <li class="nav-item ml-5">
+              <a class="nav-link">{{email}}</a>
+            </li> 
+          </ul>
+        </div>  
+      </nav>
+
+    {% block body %}
+
+    {% endblock %}
+    <!-- Footer area -->
+<section class="footer p-5 bg bg-dark mt-5">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12 col-sm-12" style="display: flex;justify-content: center;">
+            <div class="row">
+              <div class="col-12 text-center"><h2 class="text-uppercase text-white">social platforms</h2></div>
+            <div class="col-12 text-center">
+              <hr style="color: white; background-color: white;">
+              <b>
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-instagram"></i> Instagram</a><br>
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-facebook"></i> Facebook</a><br>
+              <a href="#" class="m-2 text-uppercase text-white"><i class="fa fa-twitter"></i> Twitter</a>
+            </b>
+            </div>
+            </div>          
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Footer area ends-->
+</body>
+</html>

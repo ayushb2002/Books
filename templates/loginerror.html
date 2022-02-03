@@ -1,0 +1,41 @@
+{% extends "layout1.html" %}
+{% block title %} ERROR {% endblock %}
+{% block body%}
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-12 p-5 mt-5">
+            <div class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+            <center>
+                <a href="{{ url_for('logout') }}">
+            <button class="btn btn-warning active" id="logoutbtn">Logout</button>
+             </a>
+        </center>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelector('body').onload = () =>{
+    var msg = "{{ message }}";
+    if (msg == "User already logged out"){
+        document.querySelector('#logoutbtn').disabled = true;
+        setTimeout( function(){
+            window.open("{{url_for('index')}}", '_blank')
+            window.close();
+        }, 1000);
+    }
+    else
+    {
+    document.querySelector('#logoutbtn').disabled = false;
+    setTimeout(function(){
+       window.open("{{ url_for('logout') }}", '_blank');
+       window.close();
+    },5000)
+    }
+    };
+    });
+    
+</script>
+{% endblock %}

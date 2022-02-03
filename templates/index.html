@@ -1,0 +1,47 @@
+{% extends "layout1.html" %}
+{% block title %} Welcome to Online Bookshop {% endblock %}
+
+{% block body %}
+<!-- Hero area -->
+<section id="index-hero">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center text-white" id="hero-index"> 
+            <div id="text-over">
+                <p>
+                <span class="hero-index-text"><i class="fa fa-book"></i></span><br>
+                <span class="hero-index-text">"Whenever you read a good book, somewhere in the world a door opens to allow in more light."</span><br>
+                <span class="text-uppercase aname">~  Vera Nazarian</span>
+            </p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Hero area ends -->
+<!--Info area -->
+<section id="index-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center text">
+                    <h1 class="text-uppercase"><i class="fa fa-rocket"></i> our mission <i class="fa fa-rocket"></i></h1>
+                    <p class="m-5 p-5 text-edit">
+                        This is a research based website which collects data from different users 
+                        in the form of their reviews over a book and then help people globally in 
+                        selecting the book which suits their mindset.
+                        <br>
+                        Contibute to our cause by being a part of our project.
+                    </p>
+                    <hr style="height: 1px;color: grey;background-color: grey;">
+            </div>
+            <div class="col-12 text-center mt-5 mb-5">
+                <h1 class="text-uppercase">Get started <br><i class="fa fa-trophy"></i></h1>
+            </div>
+                 <div class="col-6 text-center text-uppercase"><a href="{{ url_for('login') }}"><button class="btn btn-info btn-st" type="button">LOGIN</button> </a></div>
+                 <div class="col-6 text-center text-uppercase"><a href="{{url_for('register') }}"><button class="btn btn-info btn-st" type="button">REGISTER</button></a></div>
+                
+        </div>
+    </div>
+</section>
+<!--Info area ends -->
+{% endblock %}

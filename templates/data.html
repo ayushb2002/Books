@@ -1,0 +1,26 @@
+{% extends "layout1.html" %}
+
+{% block title%} API {% endblock %}
+
+{% block body %}  
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="m-5 p-5">
+                <h1 class="text-uppercase mb-2">API documentation</h1>
+                <p>Try following link in url:</p>
+                <code>
+                    https://127.0.0.1/api/&#60;ISBN NUMBER&#62;
+                </code>
+                <p class="p-2"> <br>
+                    Here <b>ISBN number</b> is the special code from <b>GOODREADS</b> which refers to a particular book <br>
+                Example - TRY ISBN - 0446607207
+                    <br>
+                Also, replace the 127.0.0.1 with the website url!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
